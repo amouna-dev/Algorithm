@@ -1,0 +1,21 @@
+ALGORITHM checkpoint
+VAR
+    i, cpt1, cpt2, cpt3: INTEGER;
+    cpt1 := cpt2 := cpt3 := 0;
+BEGIN
+    Read(s);
+    s := s.ToLower();
+    FOR i FROM 0 TO s.length - 1 STEP 1  DO
+        IF (s[i] = " " OR s[i] = ".") THEN
+            cpt1 := cpt1 + 1;
+        ELSE
+            cpt2 := cpt2 + 1;
+            IF (s[i] = "a" OR s[i] = "e" OR s[i] = "i" OR s[i] = "o" OR s[i] = "u" OR s[i] = "y") THEN
+                cpt3 := cpt3 + 1;
+            END_IF
+        END_IF
+    END_FOR
+    Writeln("The length of this sentence:" + cpt2);
+    Writeln("The number of words in this sentence:" + cpt1);
+    Writeln("The number of vowels in this sentence:" + cpt3);
+END
