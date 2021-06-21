@@ -26,7 +26,7 @@ BEGIN
             END_IF
         END_FOR    
         IF (count = 2) THEN
-            sum := sum + tmp[k];
+            sum := sum + tmp[k] * 2;
             
         END_IF
         
