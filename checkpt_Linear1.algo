@@ -1,0 +1,37 @@
+ALGORITHM Find_Distinct_Elements1
+VAR
+    set1, set2, tmp: ARRAY_OF INTEGER;
+    sum, i, k, n, m, count : INTEGER;
+BEGIN
+
+   Read(set1);
+   Read(set2);
+   Writeln("Set1: " + set1);
+   Writeln("Set2: " + set2);
+    sum := 0;
+    n:= set1.length;
+    m:= set2.length;
+    
+   FOR k FROM 0 TO n - m - 1 STEP 1  DO
+        count := 1;
+       IF (k < n) THEN
+            tmp[k] := set1[k];
+        ELSE
+            tmp[k] := set2[k - n];
+       END_IF
+   
+        FOR i FROM k + 1 TO n - m - 1 STEP 1  DO
+            IF (tmp[i] = tmp[k]) THEN
+                count := count + 1;
+            END_IF
+        END_FOR    
+        IF (count = 1) THEN
+            sum := sum + tmp[k];
+            
+        END_IF
+        
+    END_FOR
+
+    Writeln("Output : " + sum );
+
+END
