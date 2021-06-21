@@ -17,6 +17,7 @@ BEGIN
 
     FOR i FROM 0 TO set2.length - 1 STEP 1  DO
         IF (htab.lookup(set2[i])) THEN
+        // htab.insert(set2[i], 2);
         htab.set(set2[i], 2);
         ELSE
            htab.insert(set2[i], 1);
