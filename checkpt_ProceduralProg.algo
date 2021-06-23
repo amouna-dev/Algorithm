@@ -1,5 +1,6 @@
 
-FUNCTION  dot_product(v1: ARRAY_OF FLOAT, v2: ARRAY_OF FLOAT) : FLOAT
+//FUNCTION  dot_product(VAR v1, VAR v2: ARRAY_OF FLOAT) : FLOAT
+FUNCTION  dot_product( v1, v2: ARRAY_OF FLOAT) : FLOAT
 VAR
     ps : FLOAT := 0;
     i : INTEGER;
@@ -26,7 +27,7 @@ FOR i FROM 0 TO 2(n - 1) STEP 2  DO
        // Read(v2[j]);
         Read(v[i+1]);
     //END_FOR
-        //IF (dot_product(VAR v[i], VAR v[i+1]) = 0) THEN
+    
         IF (dot_product(v[i], v[i+1]) = 0) THEN
         //Writeln("Les v1 et v2 sont orthogonaux ");
         Writeln("Les v" + i " et v "+ i+1" sont orthogonaux ");
