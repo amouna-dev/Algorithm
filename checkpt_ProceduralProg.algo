@@ -21,14 +21,14 @@ VAR
 BEGIN
     Read(n);
 FOR i FROM 0 TO 2(n - 1) STEP 2  DO
-   // FOR j FROM 0 TO v1.length - 1 STEP 1  DO
+   FOR j FROM 0 TO vi.length - 1 STEP 1  DO
         //Read(v1[j]);
-        Read(v[i]);
+        Read(vi[j]);
        // Read(v2[j]);
-        Read(v[i+1]);
-    //END_FOR
+        Read(v(i+1)[j]);
+    END_FOR
     
-        IF (dot_product(v[i], v[i+1]) = 0) THEN
+        IF (dot_product(vi, v(i+1)) = 0) THEN
         //Writeln("Les v1 et v2 sont orthogonaux ");
         Writeln("Les v" + i " et v "+ i+1" sont orthogonaux ");
         ELSE
