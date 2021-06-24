@@ -8,6 +8,8 @@ BEGIN
         key := tab[i];
         j := i - 1;
 
+    //Move elements of tab[0..i-1] that are greater than key 
+    //to the right position in the sorted sequence
     WHILE (j >= 0 && tab[j] > key) DO
         tab[j + 1] = tab[j];
             j = j - 1;
