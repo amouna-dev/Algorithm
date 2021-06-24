@@ -22,21 +22,24 @@ BEGIN
    RETURN ps ;
 END
 
+PROCEDURE Saisie(VAR v: ARRAY_OF FLOAT, n: INTEGER)
+VAR
+   i : INTEGER;
+BEGIN
+     FOR i FROM 0 TO n - 1 STEP 1  DO
+            Read(v[i]);
+        END_FOR
+END
+
 // L'algorithm Main
 ALGORITHM Dot_Product_Vectors1
 VAR
-    n, i : INTEGER;
-    //prob de declaration car v c'est un array of array
-    vi, v(i+1) : ARRAY_OF FLOAT[100]; 
+    n, i : INTEGER;    
+    v : ARRAY_OF FLOAT[100]; 
     
 BEGIN
     Read(n);
 FOR i FROM 0 TO 2(n - 1) STEP 2  DO
-//    FOR j FROM 0 TO n - 1 STEP 1  DO
-//         Read(vi[j]);
-//         Read(v(i+1)[j]);
-
-//     END_FOR
 
         Saisie(v[i], n);
         Saisie(v[i+1], n);
@@ -45,7 +48,7 @@ FOR i FROM 0 TO 2(n - 1) STEP 2  DO
        
         Writeln("Les v" + i " et v "+ i+1" sont orthogonaux ");
         ELSE
-        ;
+        
         Writeln("Les v" + i " et v "+ i+1" ne sont pas orthogonaux ");
 
         END_IF
@@ -88,11 +91,3 @@ BEGIN
     END_WHILE  
 END
 
-PROCEDURE Saisie(VAR v: ARRAY_OF FLOAT, n: INTEGER)
-VAR
-   i : INTEGER;
-BEGIN
-     FOR i FROM 0 TO n - 1 STEP 1  DO
-            Read(v[i]);
-        END_FOR
-END
