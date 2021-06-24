@@ -24,70 +24,67 @@ END
 
 PROCEDURE Saisie(VAR v: ARRAY_OF FLOAT, n: INTEGER)
 VAR
-   i : INTEGER;
+   i, j : INTEGER;
 BEGIN
-     FOR i FROM 0 TO n - 1 STEP 1  DO
-            Read(v[i]);
+     FOR i FROM 0 TO 2*n - 1 STEP 1  DO
+        FOR j FROM 0 TO n - 1 STEP 1  DO
+            Read(v[i][j]);
         END_FOR
+    END_FOR
+
 END
 
 // L'algorithm Main
-ALGORITHM Dot_Product_Vectors1
+ALGORITHM Dot_Product_Vectors
 VAR
     n, i : INTEGER;    
-    v : ARRAY_OF FLOAT[100]; 
-    
+    v : ARRAY_OF FLOAT[100][100]; 
+     
 BEGIN
     Read(n);
-FOR i FROM 0 TO 2(n - 1) STEP 2  DO
+    FOR i FROM 0 TO 2*(n - 1) STEP 2  DO
 
         Saisie(v[i], n);
         Saisie(v[i+1], n);
 
         IF (dot_product(v[i], v[i+1]) = 0) THEN
        
-        Writeln("Les v" + i " et v "+ i+1" sont orthogonaux ");
+        Writeln("Les v",i " et v",i+1" sont orthogonaux");
+
         ELSE
-        
-        Writeln("Les v" + i " et v "+ i+1" ne sont pas orthogonaux ");
+
+        Writeln("Les v",i " et v",i+1" ne sont pas orthogonaux");
 
         END_IF
     
-END_FOR
+    END_FOR
        
 END
 
-// L'algorithm Main elli ena fhemtou
 ALGORITHM Dot_Product_Vectors2
 VAR
-    n, i : INTEGER;
-    v1, v2 : ARRAY_OF FLOAT[100];
-     cpt: INTEGER :=0;
-    
+    n, i, j : INTEGER;    
+    v : ARRAY_OF FLOAT[100][100]; 
+     
 BEGIN
-    Read(n); //n couples de vecteurs 
+    Read(n);
 
-    WHILE (cpt < n) DO
-    //for i 0 --> n -1 lengueur de vect elli hia par défaut 3 elements x, y, z ou 2 elements x, y
-        // FOR i FROM 0 TO n - 1 STEP 1  DO
-        //     Read(v1[i]); 
-        //     Read(v2[i]);                    
-        // END_FOR
+    FOR i FROM 0 TO 2*(n - 1) STEP 2  DO
+        FOR j FROM 0 TO n - 1 STEP 1  DO
+            Read(v[i][j]);  
+            Read(v[i+1][j]);
+        END_FOR
 
-        Saisie(v1, n);
-        Saisie(v2, n); 
-
-        IF (dot_product(v1, v2) = 0) THEN
-
-        Writeln("Les v1 et v2 sont orthogonaux ");
+        IF (dot_product(v[i], v[i+1]) = 0) THEN
+       
+        Writeln("Les v",i " et v",i+1" sont orthogonaux");
         
         ELSE
 
-        Writeln("Les v1 et v2 ne sont pas orthogonaux ");
+        Writeln("Les v",i " et v",i+1" ne sont pas orthogonaux");
 
         END_IF
-        cpt := cpt + 1;
     
-    END_WHILE  
+    END_FOR
+       
 END
-
