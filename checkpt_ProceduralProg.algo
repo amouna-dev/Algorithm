@@ -1,5 +1,15 @@
 
-//FUNCTION  dot_product(VAR v1, VAR v2: ARRAY_OF FLOAT) : FLOAT
+PROCEDURE dot_product(v1, v2: ARRAY_OF FLOAT, VAR Ps:FLOAT)
+VAR
+    i : INTEGER;
+BEGIN
+    Ps := 0;
+    FOR i FROM 0 TO v1.length - 1 STEP 1  DO
+       Ps := Ps + v1[i] * v2[i];
+       // Write("Le PS de v1 et v2 est: " + Ps);
+    END_FOR   
+END
+
 FUNCTION  dot_product( v1, v2: ARRAY_OF FLOAT) : FLOAT
 VAR
     ps : FLOAT := 0;
@@ -12,31 +22,63 @@ BEGIN
    RETURN ps ;
 END
 
+// L'algorithm Main
 ALGORITHM Dot_Product_Vectors
 VAR
     n, i : INTEGER;
-    //v1, v2 : ARRAY_OF FLOAT[100];
-    v : ARRAY_OF FLOAT[100];
+    //prob de declaration car v c'est un array of array
+    vi, v(i+1) : ARRAY_OF FLOAT[100]; 
     
 BEGIN
     Read(n);
 FOR i FROM 0 TO 2(n - 1) STEP 2  DO
-   FOR j FROM 0 TO vi.length - 1 STEP 1  DO
-        //Read(v1[j]);
+   FOR j FROM 0 TO n - 1 STEP 1  DO
         Read(vi[j]);
-       // Read(v2[j]);
         Read(v(i+1)[j]);
+
     END_FOR
     
         IF (dot_product(vi, v(i+1)) = 0) THEN
-        //Writeln("Les v1 et v2 sont orthogonaux ");
+       
         Writeln("Les v" + i " et v "+ i+1" sont orthogonaux ");
         ELSE
-        //Writeln("Les v1 et v2 ne sont pas orthogonaux ");
+        ;
         Writeln("Les v" + i " et v "+ i+1" ne sont pas orthogonaux ");
 
         END_IF
     
 END_FOR
        
+END
+
+// L'algorithm Main elli ena fhemtou
+ALGORITHM Dot_Product_Vectors
+VAR
+    n, i : INTEGER;
+    v1, v2 : ARRAY_OF FLOAT[100];
+     cpt: INTEGER :=0;
+    
+BEGIN
+    Read(n); //n couples de vecteurs 
+
+    WHILE (cpt < n) DO
+    //for i 0 --> n -1 lengueur de vect elli hia par défaut 3 elements x, y, z ou 2 elements x, y
+        FOR i FROM 0 TO n - 1 STEP 1  DO
+            Read(v1[i]);
+        
+            Read(v2[i]);
+        END_FOR
+    
+        IF (dot_product(v1, v2) = 0) THEN
+
+        Writeln("Les v1 et v2 sont orthogonaux ");
+        
+        ELSE
+
+        Writeln("Les v1 et v2 ne sont pas orthogonaux ");
+
+        END_IF
+        cpt := cpt + 1;
+    
+    END_WHILE  
 END
