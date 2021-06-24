@@ -24,7 +24,7 @@ BEGIN
 
     UNTIL (c = '.')
 
-    Writeln("The length of this sentence:" + l);
-    Writeln("The number of words in this sentence:" + nbw);
-    Writeln("The number of vowels in this sentence:" + nbv);
+    Writeln("The length of this sentence:", l);
+    Writeln("The number of words in this sentence:", nbw);
+    Writeln("The number of vowels in this sentence:", nbv);
 END

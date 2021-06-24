@@ -4,15 +4,11 @@ VAR
     sum, i, k, n, m, count : INTEGER;
 BEGIN
 
-   Read(set1);
-   Read(set2);
-   Writeln("Set1: " + set1);
-   Writeln("Set2: " + set2);
     sum := 0;
     n:= set1.length;
     m:= set2.length;
     
-   FOR k FROM 0 TO n - m - 1 STEP 1  DO
+   FOR k FROM 0 TO n + m - 1 STEP 1  DO
         count := 1;
        IF (k < n) THEN
             tmp[k] := set1[k];
@@ -20,7 +16,7 @@ BEGIN
             tmp[k] := set2[k - n];
        END_IF
    
-        FOR i FROM k + 1 TO n - m - 1 STEP 1  DO
+        FOR i FROM k + 1 TO n + m - 1 STEP 1  DO
             IF (tmp[i] = tmp[k]) THEN
                 count := count + 1;
             END_IF
@@ -32,6 +28,6 @@ BEGIN
         
     END_FOR
 
-    Writeln("Sum of overlapping elements: " + sum);
+    Writeln("Sum of overlapping elements: ", sum);
 
 END
