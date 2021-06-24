@@ -23,7 +23,7 @@ BEGIN
 END
 
 // L'algorithm Main
-ALGORITHM Dot_Product_Vectors
+ALGORITHM Dot_Product_Vectors1
 VAR
     n, i : INTEGER;
     //prob de declaration car v c'est un array of array
@@ -32,13 +32,16 @@ VAR
 BEGIN
     Read(n);
 FOR i FROM 0 TO 2(n - 1) STEP 2  DO
-   FOR j FROM 0 TO n - 1 STEP 1  DO
-        Read(vi[j]);
-        Read(v(i+1)[j]);
+//    FOR j FROM 0 TO n - 1 STEP 1  DO
+//         Read(vi[j]);
+//         Read(v(i+1)[j]);
 
-    END_FOR
-    
-        IF (dot_product(vi, v(i+1)) = 0) THEN
+//     END_FOR
+
+        Saisie(v[i], n);
+        Saisie(v[i+1], n);
+
+        IF (dot_product(v[i], v[i+1]) = 0) THEN
        
         Writeln("Les v" + i " et v "+ i+1" sont orthogonaux ");
         ELSE
@@ -52,7 +55,7 @@ END_FOR
 END
 
 // L'algorithm Main elli ena fhemtou
-ALGORITHM Dot_Product_Vectors
+ALGORITHM Dot_Product_Vectors2
 VAR
     n, i : INTEGER;
     v1, v2 : ARRAY_OF FLOAT[100];
@@ -63,12 +66,14 @@ BEGIN
 
     WHILE (cpt < n) DO
     //for i 0 --> n -1 lengueur de vect elli hia par défaut 3 elements x, y, z ou 2 elements x, y
-        FOR i FROM 0 TO n - 1 STEP 1  DO
-            Read(v1[i]);
-        
-            Read(v2[i]);
-        END_FOR
-    
+        // FOR i FROM 0 TO n - 1 STEP 1  DO
+        //     Read(v1[i]); 
+        //     Read(v2[i]);                    
+        // END_FOR
+
+        Saisie(v1, n);
+        Saisie(v2, n); 
+
         IF (dot_product(v1, v2) = 0) THEN
 
         Writeln("Les v1 et v2 sont orthogonaux ");
@@ -81,4 +86,13 @@ BEGIN
         cpt := cpt + 1;
     
     END_WHILE  
+END
+
+PROCEDURE Saisie(VAR v: ARRAY_OF FLOAT, n: INTEGER)
+VAR
+   i : INTEGER;
+BEGIN
+     FOR i FROM 0 TO n - 1 STEP 1  DO
+            Read(v[i]);
+        END_FOR
 END
