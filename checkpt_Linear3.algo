@@ -21,6 +21,7 @@ BEGIN
                 count := count + 1;
             END_IF
         END_FOR    
+        
         IF (count = 2) THEN
             sum := sum + tmp[k] * 2;
             

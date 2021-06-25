@@ -34,5 +34,5 @@ BEGIN
        END_IF
     END_FOR
 
-    Writeln("Output : " + sum );
+    Writeln("Output : ", sum );
 END

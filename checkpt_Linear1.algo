@@ -1,10 +1,8 @@
 ALGORITHM Find_Distinct_Elements1
 VAR
     set1, set2, tmp: ARRAY_OF INTEGER;
-    sum, i, k, n, m, count : INTEGER;
+    sum,i, k, n, m, count : INTEGER;
 BEGIN
-
-
     sum := 0;
     n:= set1.length;
     m:= set2.length;

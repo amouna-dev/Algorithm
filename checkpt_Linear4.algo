@@ -4,7 +4,6 @@ VAR
     set1, set2 : ARRAY_OF INTEGER;
     i, sum : INTEGER;
 BEGIN
-
     sum := 0;
 
     FOR i FROM 0 TO set1.length - 1 STEP 1  DO
@@ -33,5 +32,5 @@ BEGIN
     //    END_IF
     // END_FOR
 
-    Writeln("Sum of overlapping elements: " + sum);
+    Writeln("Sum of overlapping elements: ", sum);
 END
