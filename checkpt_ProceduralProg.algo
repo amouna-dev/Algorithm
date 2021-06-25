@@ -22,7 +22,7 @@ BEGIN
    RETURN ps ;
 END
 
-PROCEDURE saisir_vect(VAR v : ARRAY_OF FLOAT)
+PROCEDURE saisir_vect(VAR v : ARRAY_OF FLOAT, n: INTEGER)
 VAR
     i, j : INTEGER;
 BEGIN
@@ -37,11 +37,12 @@ END
 //L'algorithm Main
 ALGORITHM Dot_Product_Vectors
 VAR
-    n, i, j : INTEGER;    
+    n, i : INTEGER;    
     v : ARRAY_OF FLOAT[100][100]; 
      
 BEGIN
     Read(n);
+
     saisir_vect(v, n);
     
     FOR i FROM 0 TO 2*(n - 1) STEP 2  DO
