@@ -32,7 +32,8 @@ BEGIN
     Read(n);
 
     FOR i FROM 0 TO 2*(n - 1) STEP 2  DO
-        FOR j FROM 0 TO n - 1 STEP 1  DO
+    //  FOR j FROM 0 TO n - 1 STEP 1  DO
+        FOR j FROM 0 TO 2 STEP 1  DO
             Read(v[i][j]);  
             Read(v[i+1][j]);
         END_FOR
