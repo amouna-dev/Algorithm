@@ -2,7 +2,7 @@ ALGORITHM checkpoint
 VAR
     l, nbw, nbv: INTEGER;
     c :CHAR;
-    tab: ARRAY_OF Char[5];   
+    tab: ARRAY_OF CHAR[5];   
 BEGIN
     c:='';
     l := nbv := 0; nbw := 1;
